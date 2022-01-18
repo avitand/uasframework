@@ -1,0 +1,57 @@
+<html lang="en">
+    <head>
+        <title>Beranda Hijab</title>
+        <link rel="stylesheet" href="/assets/style.css">
+    </head>
+    <body>
+        <%- include ('../components/navbar') %>
+        <p></p>
+        <div class="container">
+            <!-- <div>
+                <h1>Daftar Hijab By Avita</h1>
+                <h4>Total Hijab : <%= hijab.length %></h4>
+            </div>
+            <div class="btn-group " role="group" aria-label="...">
+                <form action="/hijab">
+                    <input class="form-control me-2" type="text" name="keyword" placeholder="Pencarian">
+                </form>
+                <form action="/hijab">
+                    <button class="btn btn-outline-dark" type="submit">Cari</button>
+                </form>
+            </div>
+            <div class="row row-cols-1 row-cols-xs-2 row-cols-sm-2 row-cols-lg-4 g-3">
+                <% if (hijab.length> 0) { %>
+                    <% hijab.forEach (function(hijab){ %>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm"> 
+                            <img src="https://cdn.shopify.com/s/files/1/0505/4883/4497/products/RSP06898_800x.jpg?v=1632570605" class="card-img-top" alt="..." />
+                            <div class="card-body">
+                                <h5 class="card-title"><%= hijab.nama %></h5>
+                                <class="col p-5 d-flex flex-column position-static">
+                                    <a class="btn btn-outline-secondary my-2" href="/hijab/<%= hijab._id %>">Detail</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <% }); %>
+            <% } else { %>
+                <p>Data Hijab Kosong</p>
+                <% } %>
+        </div> -->
+            <h1>Daftar Hijab By Avita</h1>
+            <h4>Total Hijab : <%= hijab.length %></h4>
+            <ul>
+                <% if (hijab.length > 0) { %>
+                <% hijab.forEach (function(hijab){ %>
+                    <li><a href="/hijab/<%= hijab._id %>">
+                        <%= hijab.nama %>
+                    </a></li>
+                <% }); %>
+                <% } else { %>
+                <p>Data Hijab Kosong</p>
+                <% } %>
+            </ul>
+        </div>
+        <%- include ('../components/footer') %>
+    </body>
+</html>

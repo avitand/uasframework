@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <title>Detail</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <%- include ('../components/navbar') %>
+    <p></p>
+    <div class="container">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col-auto d-none d-lg-block">
+          <img width="400" height="400" class="img-fluid"
+          src="data:image/<%=hijab.img.contentType%>;base64,<%=hijab.img.data.toString('base64')%>" 
+          alt="image-produk">
+        </div>
+        <div class="col p-5 d-flex flex-column position-static">
+          <h2 class="fw-light"><b><%= hijab.nama %></b></h2>
+          <h3 class="fw-light"><b>Harga </b><small>Rp. <%= hijab.harga %></small></h3>
+          <h5 class="fw-light"><%= hijab.ket %></h5>
+          <a href="https://wa.me/6282237981721" class="btn btn-outline-secondary my-2">Beli Via WhatsApp</a>
+          <div>
+            <a href="/hijab/update/<%= hijab._id %>/<%= hijab.nama %>/<%= hijab.harga %>/<%= hijab.ket %>" 
+              class="btn btn-outline-secondary my-2">Edit Produk</a>
+            <a href="/hijab/hapus/<%= hijab._id %>" class="btn btn-outline-secondary my-2">Hapus Produk</a>
+            <a href="/hijab" class="btn btn-outline-secondary my-2">Kembali</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include ('../components/footer') %>
+</body>
+</html>

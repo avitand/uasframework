@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Tambah Data</title>
+</head>
+<body>
+    <%- include ('../components/navbar') %>
+    <div class="container">
+    <h1>Tambah Hijab</h1>
+    <form action="/hijab" method="post" enctype="multipart/form-data">
+        <div class="group-input">
+            <input class="form-control me-2" type="text" name="nama" placeholder="Nama Hijab"><br>
+        </div>
+        <div class="group-input">
+            <input class="form-control me-2" type="text" name="harga" placeholder="Harga Hijab"><br>
+        </div>
+        <div class="group-input">
+            <input class="form-control me-2" type="text" name="ket" placeholder="Keterangan"><br>
+        </div>
+        <div class="group-input">
+            <label>Gambar</label>
+             <input class="form-control me-2" name='image' type="file" required><br>
+        </div>
+        <button class="btn btn-outline-dark" type="submit">Tambah</button>
+        <a href="/hijab" class="btn btn-outline-dark">Kembali</a>
+    </form>
+</div>
+</body>
+</html>

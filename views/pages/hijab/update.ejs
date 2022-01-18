@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <title>Edit Data Hijab</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <%- include ('../components/navbar') %>
+    <div class="container">
+    <p></p>
+    <h1>Edit Data Hijab</h1>
+    <form method="post" action="/hijab/update" enctype="multipart/form-data">
+        <div class="group-input">
+            <label>ID Hijab Database </label>
+            <input class="form-control me-2" type="text" name="_id" readonly value='<%= hijab._id %>'><br>
+        </div>
+        <div class="group-input">
+            <label>Nama Hijab</label>
+            <input class="form-control me-2" type="text" name="nama" required value='<%= hijab.nama %>'><br>
+        </div>
+        <div class="group-input">
+            <label>Harga </label>
+            <input class="form-control me-2" type="text" name="harga" required value='<%= hijab.harga %>'><br>
+        </div>
+        <div class="group-input">
+            <label>Keterangan </label>
+            <input class="form-control me-2" type="text" name="ket" required value='<%= hijab.ket %>'><br>
+        </div>
+        <div class="group-input">
+            <label>Gambar</label>
+             <input class="form-control" type="file" required name="image"><br>
+        </div>
+        <button class="btn btn-outline-dark" type="submit">Simpan</button>
+        <a href="/hijab" class="btn btn-outline-dark">Kembali</a>
+    </form>
+    </div>
+    <%- include ('../components/footer') %>
+</body>
+</html>
